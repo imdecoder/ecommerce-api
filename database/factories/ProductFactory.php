@@ -16,8 +16,14 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+		$faker = \Faker\Factory::create();
+
         return [
-            //
+            'name' => $faker->word,
+			'detail' => $faker->paragraph,
+			'price' => $faker->numberBetween(100, 1000),
+			'stock' => $faker->randomDigit,
+			'discount' => $faker->numberBetween(2, 30)
         ];
     }
 }
